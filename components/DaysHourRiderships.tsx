@@ -81,8 +81,10 @@ const DaysHourRiderships = () => {
             .style("stroke", highlight)
             .style("stroke-width", 1.25)
             .style("stroke-dasharray", ("3, 3"))
+            // @ts-ignore
             .attr("x1", x("6"))
             .attr("y1", 10)
+                        // @ts-ignore
             .attr("x2", x("6"))
             .attr("y2", height);
 
@@ -91,8 +93,10 @@ const DaysHourRiderships = () => {
             .style("stroke", highlight)
             .style("stroke-width", 1.25)
             .style("stroke-dasharray", ("3, 3"))
+                        // @ts-ignore
             .attr("x1", x("10") + 1 * x.bandwidth())
             .attr("y1", 10)
+                        // @ts-ignore
             .attr("x2", x("10") + 1 * x.bandwidth())
             .attr("y2", height);
 
@@ -101,8 +105,10 @@ const DaysHourRiderships = () => {
             .style("stroke", highlight)
             .style("stroke-width", 1.25)
             .style("stroke-dasharray", ("3, 3"))
+                        // @ts-ignore
             .attr("x1", x("15"))
             .attr("y1", 10)
+                        // @ts-ignore
             .attr("x2", x("15"))
             .attr("y2", height);
 
@@ -111,8 +117,10 @@ const DaysHourRiderships = () => {
             .style("stroke", highlight)
             .style("stroke-width", 1.25)
             .style("stroke-dasharray", ("3, 3"))
+                        // @ts-ignore
             .attr("x1", x("18") + 1 * x.bandwidth())
             .attr("y1", 10)
+                        // @ts-ignore
             .attr("x2", x("18") + 1 * x.bandwidth())
             .attr("y2", height);
 
@@ -144,8 +152,10 @@ const DaysHourRiderships = () => {
             .style("stroke", highlight)
             .style("stroke-width", 1.25)
             .style("stroke-dasharray", ("3, 3"))
+                        // @ts-ignore
             .attr("x1", x("6"))
             .attr("y1", 10)
+                        // @ts-ignore
             .attr("x2", x("6"))
             .attr("y2", height);
 
@@ -154,8 +164,10 @@ const DaysHourRiderships = () => {
             .style("stroke", highlight)
             .style("stroke-width", 1.25)
             .style("stroke-dasharray", ("3, 3"))
+                        // @ts-ignore
             .attr("x1", x("18") + 1 * x.bandwidth())
             .attr("y1", 10)
+                        // @ts-ignore
             .attr("x2", x("18") + 1 * x.bandwidth())
             .attr("y2", height);
 
@@ -201,8 +213,6 @@ const DaysHourRiderships = () => {
           <div className='w-[20px] h-[10px] bg-[#0039A6]'></div>
           <div className='my-[5px] font-regular text-[12px] text-[#323232]'>Riderships</div>
         </div>
-
-
       </div>
       {
         days.map((d, i) => {
