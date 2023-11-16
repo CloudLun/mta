@@ -41,10 +41,10 @@ const WeekHourRiderships = () => {
                 .style("stroke", highlight)
                 .style("stroke-width", 1.25)
                 .style("stroke-dasharray", ("3, 3"))
-                            // @ts-ignore
+                // @ts-ignore
                 .attr("x1", x("6"))
-                .attr("y1", 10)
-                            // @ts-ignore
+                .attr("y1", 0)
+                // @ts-ignore
                 .attr("x2", x("6"))
                 .attr("y2", height);
 
@@ -53,10 +53,10 @@ const WeekHourRiderships = () => {
                 .style("stroke", highlight)
                 .style("stroke-width", 1.25)
                 .style("stroke-dasharray", ("3, 3"))
-                            // @ts-ignore
+                // @ts-ignore
                 .attr("x1", x("10") + 1 * x.bandwidth())
-                .attr("y1", 10)
-                            // @ts-ignore
+                .attr("y1", 0)
+                // @ts-ignore
                 .attr("x2", x("10") + 1 * x.bandwidth())
                 .attr("y2", height);
 
@@ -65,10 +65,10 @@ const WeekHourRiderships = () => {
                 .style("stroke", highlight)
                 .style("stroke-width", 1.25)
                 .style("stroke-dasharray", ("3, 3"))
-                            // @ts-ignore
+                // @ts-ignore
                 .attr("x1", x("15"))
-                .attr("y1", 10)
-                            // @ts-ignore
+                .attr("y1", 0)
+                // @ts-ignore
                 .attr("x2", x("15"))
                 .attr("y2", height);
 
@@ -77,10 +77,10 @@ const WeekHourRiderships = () => {
                 .style("stroke", highlight)
                 .style("stroke-width", 1.25)
                 .style("stroke-dasharray", ("3, 3"))
-                            // @ts-ignore
+                // @ts-ignore
                 .attr("x1", x("18") + 1 * x.bandwidth())
-                .attr("y1", 10)
-                            // @ts-ignore
+                .attr("y1", 0)
+                // @ts-ignore
                 .attr("x2", x("18") + 1 * x.bandwidth())
                 .attr("y2", height);
 
@@ -97,6 +97,31 @@ const WeekHourRiderships = () => {
                 .attr("height", d => height - y(+d["Weekend"] / 2))
                 .attr("fill", "#0039A6")
 
+            d3.select(weekRef[1].current)
+                .append("line")
+                .style("stroke", highlight)
+                .style("stroke-width", 1.25)
+                .style("stroke-dasharray", ("3, 3"))
+                // @ts-ignore
+                .attr("x1", x("6"))
+                .attr("y1", 10)
+                // @ts-ignore
+                .attr("x2", x("6"))
+                .attr("y2", height);
+
+            d3.select(weekRef[1].current)
+                .append("line")
+                .style("stroke", highlight)
+                .style("stroke-width", 1.25)
+                .style("stroke-dasharray", ("3, 3"))
+                // @ts-ignore
+                .attr("x1", x("18") + 1 * x.bandwidth())
+                .attr("y1", 10)
+                // @ts-ignore
+                .attr("x2", x("18") + 1 * x.bandwidth())
+                .attr("y2", height);
+
+
         })
 
 
@@ -109,8 +134,8 @@ const WeekHourRiderships = () => {
         <div className='m-auto p-[20px] w-[90vw] h-[100vh]'>
             <div className='flex justify-between items-end  h-[8vh]'>
                 <div>
-                    <div className='font-semibold text-[30px] text-[#0039A6]'>Daily Total Hours Ridership By Hours</div>
-                    <div className='mt-[3px] mb-[5px] font-regular text-[#323232]'>Distributions of total daily riderships in NYC devided by hours</div>
+                    <div className='font-semibold text-[30px] text-[#0039A6]'>Weekday and Weekend Total Hours Ridership By Hours</div>
+                    <div className='mt-[3px] mb-[5px] font-regular text-[#323232]'>Comparison of weekday and weekend total riderships in NYC devided by hours</div>
                 </div>
                 <div className='flex items-center gap-[5px]'>
                     <div className='w-[20px] h-[10px] bg-[#0039A6]'></div>
@@ -118,11 +143,19 @@ const WeekHourRiderships = () => {
                 </div>
             </div>
             <div className='relative mt-[25px]'>
-                <div className='absolute bottom-[-30px] left-[10px] font-semibold text-[#0039A6]'>Weekday</div>
+                <div className='absolute bottom-[-40px] left-[10px] font-semibold text-[#0039A6]'>Weekday</div>
+                <div className={`absolute bottom-[-16px] left-[25px] font-semibold text-[10px] text-[#323232]`}>0:00</div>
+                <div className={`absolute bottom-[-16px] left-[400px] font-semibold text-[10px] text-[#323232]`}>6:00</div>
+                <div className={`absolute bottom-[-16px]  left-[775px] font-semibold text-[10px] text-[#323232]`}>12:00</div>
+                <div className={`absolute bottom-[-16px] left-[1150px] font-semibold text-[10px] text-[#323232]`}>18:00</div>
                 <svg className=' w-full h-[calc((80vh)/2)]' ref={weekdayRef}></svg>
             </div>
             <div className='relative'>
-                <div className='absolute bottom-[-30px] left-[10px] font-semibold text-[#0039A6]'>Weekend</div>
+                <div className='absolute bottom-[-40px] left-[10px] font-semibold text-[#0039A6]'>Weekend</div>
+                <div className={`absolute bottom-[-16px] left-[25px] font-semibold text-[10px] text-[#323232]`}>0:00</div>
+                <div className={`absolute bottom-[-16px] left-[400px] font-semibold text-[10px] text-[#323232]`}>6:00</div>
+                <div className={`absolute bottom-[-16px]  left-[775px] font-semibold text-[10px] text-[#323232]`}>12:00</div>
+                <div className={`absolute bottom-[-16px] left-[1150px] font-semibold text-[10px] text-[#323232]`}>18:00</div>
                 <svg className=' w-full h-[calc((80vh)/2)]' ref={weekendRef}></svg>
             </div>
         </div>
